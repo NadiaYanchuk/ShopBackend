@@ -1,7 +1,7 @@
 @extends('admin.layouts.template') 
 @section('page_title')
-Dashboard - Single Ecom
+Pending Orders - Single Ecom
 @endsection
 @section('content')
-Hello world
+Pending Order 
 @endsection
