@@ -12,7 +12,17 @@ Add Category - Single Ecom
                 <small class="text-muted float-end">Input information</small>
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                @if ($errors->any()) 
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <form action="{{ route('storecategory') }}" method="POST">
+                    @csrf
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-name">Category Name</label>
                         <div class="col-sm-10">
