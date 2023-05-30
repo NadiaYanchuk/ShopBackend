@@ -1,4 +1,4 @@
-@extends('admin.layouts.template') 
+@extends('admin.layouts.template')
 @section('page_title')
 Add Sub Category - Single Ecom
 @endsection
@@ -12,26 +12,38 @@ Add Sub Category - Single Ecom
                 <small class="text-muted float-end">Input information</small>
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <form action="{{ route('storesubcategory') }}" method="POST">
+                    @csrf
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-name">Sub Category Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="subcategory_name" name="subcategory_name" placeholder="Fan" />
+                            <input type="text" class="form-control" id="subcategory_name" name="subcategory_name"
+                                placeholder="Fan" />
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-name">Select Category</label>
                         <div class="col-sm-10">
-                            <select class="form-select" id="category" name="category" aria-label="Default select example">
+                            <select class="form-select" id="category" name="category_id"
+                                aria-label="Default select example">
                                 <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="row justify-content-end">
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Add Sub Category</button>
