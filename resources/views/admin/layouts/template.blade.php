@@ -46,8 +46,8 @@
         <!-- Menu -->
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Nadia Create</span>
+            <a href="" class="app-brand-link">
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">admin panel</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -71,13 +71,13 @@
             </li>
             <li class="menu-item">
               <a href="{{ route('allcategories') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Account Settings">All Categories</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="{{ route('addcategory') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Authentications">Add Category</div>
               </a>
             </li>
@@ -85,13 +85,13 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Sub category</span></li>
             <li class="menu-item">
               <a href="{{ route('allsubcategories') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Basic">All Sub Categories</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="{{ route('addsubcategory') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-copy"></i>
+                <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Extended UI">Add Sub Category</div>
               </a>
             </li>
@@ -105,7 +105,7 @@
             </li>
             <li class="menu-item">
               <a href="{{ route('addproduct') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Form Layouts">Add Product</div>
               </a>
             </li>

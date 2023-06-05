@@ -1,6 +1,6 @@
 @extends('admin.layouts.template')
 @section('page_title')
-Edit Sub Category - Single Ecom
+Edit Sub Category - Admin Panel
 @endsection
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -12,7 +12,7 @@ Edit Sub Category - Single Ecom
                 <small class="text-muted float-end">Input information</small>
             </div>
             <div class="card-body">
-                @if ($errors->any())
+                @if ($errors->any()) 
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -23,14 +23,14 @@ Edit Sub Category - Single Ecom
                 @endif
                 <form action="{{ route('updatesubcategory') }}" method="POST">
                     @csrf
-                    <input type="hidden" value="{{ $subcatinfo->id }}" name="subcategory_id">
+                    <input type="hidden" value="{{ $subcategory_info->id }}" name="subcategory_id">
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="basic-default-name">Sub Category Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="subcategory_name" name="subcategory_name" value="{{$subcatinfo->subcategory_name}}" />
+                            <input type="text" class="form-control" id="subcategory_name" name="subcategory_name" value="{{ $subcategory_info->subcategory_name }}" />
                         </div>
                     </div>
-
+                    
                     <div class="row justify-content-end">
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Update Sub Category</button>

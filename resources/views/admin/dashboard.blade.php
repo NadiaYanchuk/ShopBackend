@@ -1,7 +1,7 @@
 @extends('admin.layouts.template') 
 @section('page_title')
-Dashboard - Single Ecom
+Dashboard - Admin Panel
 @endsection
 @section('content')
-Hello world
+Hi, this is Admin Panel!
 @endsection

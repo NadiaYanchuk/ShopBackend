@@ -42,23 +42,29 @@ class SubCategoryController extends Controller
     }
 
     public function EditSubCategory($id) {
-        $subcatinfo = Subcategory::findOrFail($id);
+        $subcategory_info = Subcategory::findOrFail($id);
 
-        return view('admin.editsubcategory', compact('subcatinfo'));
+        return view('admin.editsubcategory', compact('subcategory_info'));
     }
 
     public function UpdateSubCategory(Request $request) {
-        $subcatid = $request->subcatid;
+        $subcategory_id = $request->subcategory_id;
 
         $request->validate([
             'subcategory_name' => 'required|unique:subcategories',
         ]);
 
-        Subcategory::findOrFail($subcatid)->update([
+        Subcategory::findOrFail($subcategory_id)->update([
             'subcategory_name' => $request->subcategory_name,
-            'slug' => strtolower(str_replace(' ', '-', $request->subcategory_name)),
+            'slug' => strtolower(str_replace(' ', '-', $request->subcategory_name))
         ]);
 
-        return redirect()->route('allsubcategories')->with('message', 'Sub Category Updated Successfully!');
+        return redirect()->route('allsubcategories')->with('message', 'Category Updated Successfully!');
+    }
+
+    public function DeleteSubCategory($id) {
+        Subcategory::findOrFail($id)->delete();
+
+        return redirect()->route('allsubcategories')->with('message', 'Sub Category Deleted Successfully!');
     }
 }
